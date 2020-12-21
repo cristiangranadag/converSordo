@@ -1,4 +1,5 @@
 'use strict'
+document.getElementById('mostrar').style.display = "none"
 
 const lista1 = document.getElementById('moneda');
 const lista2 = document.getElementById('moneda2');
@@ -40,6 +41,13 @@ lista2.appendChild(fragmento2)
 function Convertir() {
 
     cantidad = Number(document.getElementById('unidad').value);
+    while (isNaN(cantidad)){
+        alert('Error, solo número')
+        cantidad = Number(document.getElementById('unidad').value);
+        break
+    }
+
+    document.getElementById('mostrar').style.display = "block"
 
     res = Calcular(cantidad);
     // res2 = Calcular(cantidad);

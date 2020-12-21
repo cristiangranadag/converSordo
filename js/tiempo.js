@@ -1,5 +1,5 @@
 'use strict'
-
+document.getElementById('mostrar').style.display = "none"
 const lista1 = document.getElementById('tiempo');
 const lista2 = document.getElementById('tiempo2');
 
@@ -40,14 +40,24 @@ lista2.appendChild(fragmento2)
 function Convertir() {
 
     cantidad = Number(document.getElementById('unidad').value);
+    while (isNaN(cantidad)){
+        alert('Error, solo número')
+        cantidad = Number(document.getElementById('unidad').value);
+        break
+    }
+
+        
 
     res = Calcular(cantidad);
+    
     // res2 = Calcular(cantidad);
 
     document.getElementById('resultado').value = res;
     // document.getElementById('resultado2').value = res2;
     document.getElementById('mensaje').innerHTML =   'El resultado es'
 }
+
+
 
 function Calcular(cantidad) {
 
