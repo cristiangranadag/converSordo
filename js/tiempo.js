@@ -46,7 +46,7 @@ function Convertir() {
         break
     }
 
-        
+    document.getElementById('mostrar').style.display = "block"       
 
     res = Calcular(cantidad);
     
